@@ -394,20 +394,8 @@ KBUILD_AFLAGS += \
 		-mcpu=cortex-a53 \
 		-mtune=cortex-a53
 else
-KBUILD_CFLAGS += \
-		-fdiagnostics-color \
-		-fgraphite \
-		-fgraphite-identity \
-		-fira-loop-pressure \
-		-floop-nest-optimize \
-		-fmodulo-sched \
-		-fmodulo-sched-allow-regmoves \
-		-ftree-vectorize \
-		-mcpu=cortex-a57.cortex-a53 \
-		-mtune=cortex-a57.cortex-a53
-KBUILD_AFLAGS += \
-		-mcpu=cortex-a57.cortex-a53 \
-		-mtune=cortex-a57.cortex-a53
+KBUILD_CFLAGS += -mcpu=cortex-a57.cortex-a53 -mtune=cortex-a57.cortex-a53 -fdiagnostics-color
+KBUILD_AFLAGS += -mcpu=cortex-a57.cortex-a53 -mtune=cortex-a57.cortex-a53
 endif
 
 # Read KERNELRELEASE from include/config/kernel.release (if it exists)
