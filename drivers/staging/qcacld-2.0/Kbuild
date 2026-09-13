@@ -1458,6 +1458,8 @@ EXTRA_CFLAGS += -Wno-enum-conversion \
 		-Wno-shift-count-negative \
 		-Wno-shift-count-overflow \
 		-Wno-typedef-redefinition
+else
+EXTRA_CFLAGS += -Wno-switch-unreachable
 endif
 
 # Module information used by KBuild framework
