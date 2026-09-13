@@ -18,6 +18,11 @@ arm64-obj-y := cputable.o debug-monitors.o entry.o irq.o fpsimd.o	\
 			hyp-stub.o psci.o cpu_ops.o insn.o opcodes.o		\
 			return_address.o
 
+
+ifndef CONFIG_COMPAT_VDSO
+arm64-obj-$(CONFIG_COMPAT)		+= sigreturn32.o
+endif
+
 arm64-obj-$(CONFIG_COMPAT)		+= sys32.o signal32.o sys_compat.o
 arm64-obj-$(CONFIG_KUSER_HELPERS)	+= kuser32.o
 arm64-obj-$(CONFIG_FUNCTION_TRACER)	+= ftrace.o entry-ftrace.o
