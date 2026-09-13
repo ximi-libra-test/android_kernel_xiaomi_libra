@@ -398,6 +398,10 @@ KBUILD_CFLAGS += -mcpu=cortex-a57.cortex-a53 -mtune=cortex-a57.cortex-a53 -fdiag
 KBUILD_AFLAGS += -mcpu=cortex-a57.cortex-a53 -mtune=cortex-a57.cortex-a53
 endif
 
+KBUILD_CFLAGS += $(call cc-option, -std=gnu89)
+KBUILD_CFLAGS += $(call cc-option, -Wno-stringop-overread)
+KBUILD_CFLAGS += $(call cc-option, -Wno-stringop-overflow)
+
 # Read KERNELRELEASE from include/config/kernel.release (if it exists)
 KERNELRELEASE = $(shell cat include/config/kernel.release 2> /dev/null)
 KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(SUBLEVEL)))$(EXTRAVERSION)
